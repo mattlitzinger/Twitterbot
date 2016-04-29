@@ -18,8 +18,8 @@
 	# Determine whether an hour has passed since last tweet
 	if( ($timestamp + 3600) <= time() ) {
 		
-		# GET 100 most recent tweets w/ #firstworldproblems
-		$results = $tweet->search('#firstworldproblems');
+		# GET 100 most recent tweets w/ HASHTAG
+		$results = $tweet->search('HASHTAG');
 		$favorite_count = 0;
 		$favorite_id = 0;
 
@@ -38,7 +38,7 @@
 
 	# =======================================
 
-	class tweet_bot {
+class tweet_bot {
     function oauth() {
       require('twitteroauth/autoload.php');
       $connection = new Abraham\TwitterOAuth\TwitterOAuth($this->api_key, $this->api_secret, $this->access_token, $this->access_token_secret);
@@ -75,4 +75,4 @@
       $this->access_token = $access_token;
       $this->access_token_secret = $access_token_secret;
     }
-	}
+}
